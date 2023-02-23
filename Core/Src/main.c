@@ -123,6 +123,8 @@ void Motor_State_Machine()
    if(stop == 1)
    {
       motor_stop();
+   }else if (stop == 0){
+	   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
    }
 
    if(accelerate == 0 && decelerate == 0 && throttle == 0 && motor_move == 0 && stop == 1)
